@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>ReadLog - 리뷰 상세</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+  <div id="common-header"></div>
+
+  <div style="display:flex; justify-content:space-between;">
+    <h2 id="pageTitle">리뷰</h2>
+    <button onclick="location.href='/search.html'" style="width:auto; background:#95a5a6; color:white;">돌아가기</button>
+  </div>
+
+  <div class="form-section">
+    <h3>🖊️ 리뷰 작성</h3>
+    <form id="createReviewForm">
+      <input type="hidden" id="targetBookId">
+      <select id="reviewRating" style="width:100px;">
+        <option value="5">⭐⭐⭐⭐⭐</option>
+        <option value="4">⭐⭐⭐⭐</option>
+        <option value="3">⭐⭐⭐</option>
+        <option value="2">⭐⭐</option>
+        <option value="1">⭐</option>
+      </select>
+      <textarea id="reviewContent" placeholder="내용 입력" style="width:100%; margin-top:10px;" required></textarea>
+      <button type="submit" style="background:#2ecc71; color:white;">등록</button>
+    </form>
+  </div>
+
+  <div id="reviewListContainer"></div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/common.js"></script>
+<script src="js/review.js"></script>
+</body>
+</html>

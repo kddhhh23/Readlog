@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ReadLog - 오늘의 질문</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <div id="common-header"></div>
+    <h2>❓ 오늘의 질문</h2>
+
+    <div id="topicDisplayArea">로딩 중...</div>
+
+    <div id="voteFormArea" class="form-section" style="display:none; border:none; padding:0; margin-top:20px;">
+        <form id="voteForm">
+            <input type="hidden" id="currentTopicId">
+            <div id="optionsContainer" style="display:flex; gap:10px; margin-bottom:15px;"></div>
+            <textarea id="voteReason" placeholder="선택 이유 (선택사항)" style="width:100%;" rows="2"></textarea>
+            <button type="submit" style="background-color:#3498db; color:white;">투표하기</button>
+        </form>
+    </div>
+
+    <div id="resultsArea" style="display:none; margin-top:20px;">
+        <h3>📊 투표 결과</h3>
+        <div id="voteStats" class="vote-stats-container"></div>
+        <h3>💬 투표 이유</h3>
+        <div id="reasonsList"></div>
+    </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/common.js"></script>
+<script src="js/topic.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', loadTopicStatus);
+</script>
+</body>
+</html>

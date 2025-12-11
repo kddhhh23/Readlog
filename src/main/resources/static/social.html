@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>ReadLog - 소셜</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+  <div id="common-header"></div>
+
+  <h2>🌐 소셜 활동</h2>
+  <div style="display:flex; gap:10px; margin-bottom:20px;">
+    <button class="tab-btn" onclick="switchTab('search')">ID 검색</button>
+    <button class="tab-btn" onclick="switchTab('school')">같은 학교</button>
+    <button class="tab-btn" onclick="switchTab('following')">팔로잉</button>
+    <button class="tab-btn" onclick="switchTab('follower')">팔로워</button>
+  </div>
+
+  <div id="tab-search" class="tab-content">
+    <form id="socialSearchForm" style="display:flex; gap:10px; margin-bottom:15px;">
+      <input type="search" id="socialSearchKeyword" placeholder="ID 입력">
+      <button type="submit" style="width:auto; margin:0; background:#3498db; color:white;">검색</button>
+    </form>
+  </div>
+
+  <div id="socialList"></div>
+
+  <div id="followingActions" style="display:none; margin-top:20px; border-top:1px solid #eee; padding-top:10px;">
+    <h3>팔로잉 피드</h3>
+    <div style="display:flex; gap:10px; margin-bottom:10px;">
+      <button onclick="loadFollowingReviews()" style="background:#f39c12; color:white;">리뷰 보기</button>
+      <button onclick="loadFollowingHistory()" style="background:#1abc9c; color:white;">독서 기록 보기</button>
+    </div>
+    <div id="feedList"></div>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/common.js"></script>
+<script src="js/follow.js"></script>
+</body>
+</html>

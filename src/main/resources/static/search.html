@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>ReadLog - 책 검색</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+  <div id="common-header"></div>
+
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+    <h2>📚 책 검색</h2>
+    <div style="display: flex; gap: 5px;">
+      <button onclick="location.href='/my-reviews.html'" style="width:auto; margin:0; padding: 8px 12px; background-color: #2ecc71; color: white;">내 리뷰 보기</button>
+      <button onclick="location.href='/history.html'" style="width:auto; margin:0; padding: 8px 12px; background-color: #9b59b6; color: white;">내 독서 기록</button>
+    </div>
+  </div>
+
+  <form id="searchForm">
+    <div class="search-form-group">
+      <div style="flex: 0.5;">
+        <select id="searchType">
+          <option value="title">제목</option>
+          <option value="author">저자</option>
+        </select>
+      </div>
+      <input type="search" id="searchKeyword" placeholder="검색어 입력" required>
+      <button type="submit" style="width:auto; margin:0; margin-bottom: 8px; background-color: #3498db; color: white;">검색</button>
+    </div>
+  </form>
+
+  <div id="searchResults">
+    <p class="no-results">검색 결과를 여기에 표시합니다.</p>
+  </div>
+</div>
+
+<div id="addLogModal" class="modal-backdrop">
+  <div class="modal-content">
+    <h3>독서 기록 추가</h3>
+    <p id="modalBookTitle" style="font-weight: bold; margin-bottom: 20px;"></p>
+    <form id="addLogForm">
+      <input type="hidden" id="modalBookId">
+      <label>상태:</label>
+      <select id="readStatus" style="margin-bottom: 15px;">
+        <option value="READING">읽는 중</option>
+        <option value="COMPLETED">완독</option>
+        <option value="STOPPED">중단</option>
+      </select>
+      <label>시작일:</label>
+      <input type="date" id="readStartDate" style="margin-bottom: 15px;">
+      <label>메모:</label>
+      <textarea id="memo" rows="3" style="width: 100%;"></textarea>
+      <div style="display: flex; gap: 10px; margin-top: 20px;">
+        <button type="submit">저장</button>
+        <button type="button" id="closeModalButton" style="background-color: #ccc; color: #333;">닫기</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/common.js"></script>
+<script src="js/readingHistory.js"></script> <script src="js/bookSearch.js"></script>
+</body>
+</html>

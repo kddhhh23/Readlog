@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: readlog
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/readlog?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: ${DB_PW}
+
+  jpa:
+    database: mysql
+    # database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+
+  sql:
+    init:
+      mode: never
+
+  devtools:
+    # 정적 파일 캐싱을 비활성화 (JS, CSS, HTML 변경 시 즉시 반영)
+    cache:
+      static-locations: false
